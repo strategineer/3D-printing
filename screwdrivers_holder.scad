@@ -1,29 +1,18 @@
 // units are in cm
 LENGTH_MULTI = 1.0;
 
-// todo handle
+// handle
 translate([0,0,135])
 rotate([90]) {
-    HORI_HANDLE_WIDTH = 85;
+    HORI_HANDLE_WIDTH = 50;
     // bottom handle
-    cylinder(HORI_HANDLE_WIDTH, 10, 10, center=true);
-    // top handle
-    translate([0,50,0])
-    cylinder(HORI_HANDLE_WIDTH, 10, 10 , center=true);
-    // side handle
-    rotate([90,0,0]) 
-    translate([0,0,0]){
-        VERT_HANDLE_WIDTH = 60;
-        translate([0,35,-25])
-        cylinder(VERT_HANDLE_WIDTH, 5, 5, center=true);
-        translate([0,-35,-25])
-        cylinder(VERT_HANDLE_WIDTH, 5, 5,center=true);
-    }
+    cylinder(HORI_HANDLE_WIDTH, 5, 5
+    , center=true);
 }
 
 // middle rod
 translate([0,0,15])
-cylinder(120, 10,10);
+cylinder(120, 5,5);
 
 for (i=[0: 60: 300])
 rotate(i) {
@@ -41,7 +30,11 @@ rotate(i) {
     difference() {
         HEX_ROT = 60;
         rotate(HEX_ROT) cylinder($fn = 6, h=40, r=17.5* LENGTH_MULTI);
-        translate([0,0,5]) rotate(HEX_ROT) cylinder($fn = 6, h=50, r=15* LENGTH_MULTI);
-        translate([0,0,5]) rotate(HEX_ROT) cylinder($fn = 6, h=52, r=13* LENGTH_MULTI);
+        translate([0,0,5])
+        rotate(HEX_ROT) {
+            cylinder($fn = 6, h=50, r=15* LENGTH_MULTI);
+            cylinder($fn = 6, h=52, r=13* LENGTH_MULTI);
+            translate([0,0,-4]) cylinder($fn = 6, h=52, r=11* LENGTH_MULTI);
         }
- }
+    }
+}
