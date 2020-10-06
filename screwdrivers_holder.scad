@@ -11,19 +11,19 @@ rotate([90]) {
 }
 
 // middle rod
-translate([0,0,15])
-cylinder(120, 5,5);
+translate([0,0,10])
+cylinder(125, 5 , 5);
 
 for (i=[0: 60: 300])
 rotate(i) {
     // supports
     rotate([90,0,90])
-    translate([42 * LENGTH_MULTI,20,0])
+    translate([42 * LENGTH_MULTI,5.25,0])
         cylinder(h=20* LENGTH_MULTI, r=5,center=true);
     
     // struts
     rotate([90,90,90])
-    translate([-20,0,0])
+    translate([-5,0,0])
         cylinder(h=35* LENGTH_MULTI, r=5);
     // holders
     translate([50* LENGTH_MULTI,0,0])
