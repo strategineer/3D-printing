@@ -38,7 +38,8 @@ difference() {
         translate([-4,0,0])
         difference()
         {
-            translate([-33,0,2.6])
+            translate([-33,0,0])
+            linear_extrude(6)
             scale([1,1.035,5.2])
             circle(30);
             translate([0,0,1.5])
