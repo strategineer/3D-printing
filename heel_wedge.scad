@@ -26,20 +26,20 @@ module edge_cutter() {
     cube(10);
 }
 difference() {
-    translate([7,0,0])
+    translate([8,0,0])
     union() {
-        scale([0.75,0.75,1])
+        scale([0.8,0.8,1])
         translate([-40,0,0])
         difference()
         {
             wedge();
             wedge_tilt();
         }
-        translate([-4,0,0])
+        translate([-5.4,0,0])
         difference()
         {
             translate([-33,0,0])
-            linear_extrude(6)
+            linear_extrude(7)
             scale([1,1.035,5.2])
             circle(30);
             translate([0,0,1.5])
