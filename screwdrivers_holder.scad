@@ -2,7 +2,19 @@
 LENGTH_MULTI = 1.0;
 
 // handle
-translate([0,0,135])
+$fa = 1;
+$fs = 0.4;
+wheel_radius = 24;
+tyre_diameter = 8;
+scale([1.5,1,1])
+translate([0,0,154])
+rotate([90,0,0])
+rotate_extrude(angle=360) {
+        translate([wheel_radius - tyre_diameter/2, 0])
+                circle(d=tyre_diameter);
+}
+
+*translate([0,0,135])
 rotate([90]) {
     HORI_HANDLE_WIDTH = 50;
     // bottom handle
